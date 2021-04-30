@@ -503,8 +503,8 @@ public class MaterialSearchBar extends FrameLayout implements View.OnClickListen
     public void showSuggestionsList(boolean useLastHeight) {
         animateSuggestions(useLastHeight?lastSuggestionHeight:0, getListHeight(false));
     }
-    public void showSuggestionsList(int height) {
-        animateSuggestions(height, getListHeight(false));
+    public void showSuggestionsList(int from,int to) {
+        animateSuggestions(from,to);
     }
 
     public void hideSuggestionsList() {
