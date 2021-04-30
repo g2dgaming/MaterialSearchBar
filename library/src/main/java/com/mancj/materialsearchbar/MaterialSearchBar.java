@@ -79,6 +79,7 @@ public class MaterialSearchBar extends FrameLayout implements View.OnClickListen
     private int speechIconRes;
     private int arrowIconRes;
     private int clearIconRes;
+    private int lastSuggestionHeight;
 
     private boolean speechMode;
     private int maxSuggestionCount;
@@ -494,10 +495,11 @@ public class MaterialSearchBar extends FrameLayout implements View.OnClickListen
         });
         if (adapter.getItemCount() > 0)
             animator.start();
+        lastSuggestionHeight = to;
     }
 
     public void showSuggestionsList() {
-        animateSuggestions(0, getListHeight(false));
+        animateSuggestions(lastSuggestionHeight, getListHeight(false));
     }
 
     public void hideSuggestionsList() {
